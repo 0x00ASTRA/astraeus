@@ -16,27 +16,23 @@ body, main {
 }
 
 body {
-  background: 
-    radial-gradient(circle at center, transparent, rgba(0, 0, 0, 0.9) 80%, rgba(0, 0, 0, 1) 100%),
-    repeating-linear-gradient(
-      to bottom,
-      transparent,
-      transparent 98%,
-      rgba(255, 255, 255, 0.05) 95%,
-      rgba(255, 255, 255, 0.05) 100%
-    ),
-    #000000;  /* Black background */
-  background-size: 100% 100%, 100% 2em;
+  background: linear-gradient(135deg, #FED328, #ECD716);
 }
 
 h1,h2, h3, Title, CardTitle {
   font-family: 'Glitch Inside', sans-serif;
+  color: #222;
 }
 
 main {
-  font-family: 'monospace', monospace;
-  background: inherit;
-  color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin: 0;
+    padding: 2rem;
+    background: inherit;
+    font-family: 'Space Mono', monospace;
 }
 
 .description {

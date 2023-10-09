@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 
-const HardwarePage: React.FC = () => {
+const CyberwarePage: React.FC = () => {
     return (
       <main className="text-white">
-        <h1>Hardware</h1>
+        <h1>Cyberware</h1>
       </main>
     );
   };
 
-export default HardwarePage;
+export default CyberwarePage;
