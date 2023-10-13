@@ -1,4 +1,5 @@
 .container {
+    margin: 8rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,9 +8,9 @@
 }
 
 .glitch {
-    color: black;
+    color: #222;
     position: relative;
-    font-size: 6vw;
+    font-size: 8vw;
     margin: 20px;
     background: none;
     animation: glitch 0s 5s infinite;
@@ -20,7 +21,7 @@
     content: attr(data-text);
     position: absolute;
     left: 0;
-    text-shadow: 5px -2px red, -5px 2px cyan;;
+    text-shadow: 0.45vw 0.15vw red, -0.65vw -0.15vw cyan;
     background: inherit;
     overflow: hidden;
     top: 0;
@@ -130,22 +131,29 @@
 
 .navList {
     display: flex;
-    justify-content: center;
+    flex-direction: row;  /* Default to row for larger screens */
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
     padding: 1rem;
     list-style-type: none;
 }
 
 .navList li {
-    margin: 0 1rem;
-    color: white;
+    margin: 0 2.5vw; /* Horizontal spacing for larger screens */
+    color: rgb(250,250,250);
     text-align: center;
+    align-items: center;
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 2.65vw;
     font-family: 'GlitchInside', sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 
 .navList li::before,
 
@@ -159,14 +167,14 @@
 
 .navList li:hover::before,
 .navList li:hover {
-    color: rgba(0,0,0,0.8);
+    color: #222;
     text-shadow: -2px cyan, 2px red;
     animation: glitch 1.2s infinite;
 }
 /* Responsive styles */
 @media (max-width: 768px) {
     .glitch {
-        font-size: 5vw;
+        font-size: 11vw;
     }
 
     .navList {
@@ -174,6 +182,15 @@
     }
 
     .navList li {
-        margin: 0.5rem 0;
+        margin: 2rem 0;
+        font-size: 6vw;
+        border: 2px solid rgba(244,244,244,0.2); 
+        border-radius: 1rem;
+        padding: 1vw 1vw;
+        backdrop-filter: blur(20px);
+        background-color: #222;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
     }
+
 }

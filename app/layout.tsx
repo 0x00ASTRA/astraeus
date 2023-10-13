@@ -6,7 +6,7 @@ import Nav from '@/components/Nav'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ASTRAEUS',
+  title: 'ASTRÆUS',
   description: 'Astraeus Technologies | Software • Hardware • Cyberware',
 }
 

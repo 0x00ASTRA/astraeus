@@ -7,7 +7,7 @@ const MainContainer = styled.main`
     gap: 3rem;
     margin: 0;
     padding: 2rem;
-    background: linear-gradient(135deg, #FED328, #ECD716);
+    background: inherit;
     font-family: 'Space Mono', monospace;  // <-- Changed Font
 `;
 
@@ -20,8 +20,6 @@ const Title = styled.h1`
 `;
 
 const Card = styled.section`
-    width: 100%;
-    max-width: 800px;
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
@@ -29,6 +27,7 @@ const Card = styled.section`
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  // More pronounced shadow
     transition: transform 0.3s;
+    margin: 3vw 1%;
 
     &:hover {
         transform: translateY(-10px);
@@ -65,7 +64,6 @@ const Card = styled.section`
 `;
 
 const CardTitle = styled.h3`
-    font-size: 2.5rem;
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -79,7 +77,6 @@ const CardTitle = styled.h3`
 `;
 
 const Paragraph = styled.p`
-    font-size: 1.5rem;
     color: #000000;
     margin-bottom: 1.5rem;
 `;

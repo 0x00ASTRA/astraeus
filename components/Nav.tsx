@@ -1,19 +1,49 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
+const darkenBG = (tailwindClass: string) => {
+    // Return an object suitable for inline styles, applying darkening to the provided color class.
+    // Here, the assumption is that the tailwindClass represents a color, like 'bg-red-500'.
+
+    if (tailwindClass.startsWith('bg-')) {
+        return `${tailwindClass} bg-opacity-50 backdrop-blur-md`;
+    }
+
+    // If the class doesn't start with 'bg-', we just return it unchanged.
+    return tailwindClass;
+};
+
+
 function Nav() {
     const [isOpen, setIsOpen] = useState(false);
+    const [darkenedBg, setDarkenedBg] = useState("");  // <- state for the darkened background
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // Check the current scroll position and decide if we want to darken the background
+            if (window.scrollY > 100) {  // Example threshold value
+                setDarkenedBg(darkenBG("bg-[#222]"));
+            } else {
+                setDarkenedBg("");
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Cleanup the listener on unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);  // Empty dependency array ensures the effect runs only once on mount and cleanup on unmount
 
     return (
-        <StickyContainer className='w-screen'>
+        <StickyContainer className={`w-screen ${darkenedBg} h-10`}>
             <Link href={"/"}>
-                <Logo src="/logo.png" alt="Home" className="w-12 top-3 absolute" />
+                <Logo src="/logo.png" alt="Home" className="w-12 top-2 absolute" />
             </Link>
-            
             <OpenButton className='absolute right-5' onClick={() => setIsOpen(true)}>•••</OpenButton>
-            
             {isOpen && (
                 <Overlay>
                     <CloseButton onClick={() => setIsOpen(false)}>X</CloseButton>
@@ -55,6 +85,7 @@ const Overlay = styled.nav`
     background: linear-gradient(135deg, #FED328, #ECD716);
     font-family: 'Space Mono', monospace;
     z-index: 1000;
+    height: 100vh;
 `;
 
 const Logo = styled.img`

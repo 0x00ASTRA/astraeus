@@ -16,7 +16,7 @@ body, main {
 }
 
 body {
-  background: linear-gradient(135deg, #FED328, #ECD716);
+  background: linear-gradient(135deg, #E9B90B, #ECBA16);
 }
 
 h1,h2, h3, Title, CardTitle {
@@ -37,4 +37,17 @@ main {
 
 .description {
  color: #CCCCCC;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 85%;
+    gap: 5%;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
 }

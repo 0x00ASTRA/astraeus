@@ -1,11 +1,16 @@
 "use client";
-import React from "react";
+import React from 'react';
+import { Paragraph, CardTitle, Card, Title, MainContainer } from "@/components/Styled";
+
 
 const CyberwarePage: React.FC = () => {
     return (
-      <main className="text-white">
-        <h1>Cyberware</h1>
-      </main>
+      <MainContainer>
+        <Title>Cyberware</Title>
+        <Card>
+            <CardTitle>TBA</CardTitle>
+        </Card>
+      </MainContainer>
     );
   };
 
